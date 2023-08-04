@@ -4,17 +4,17 @@ namespace VC.PorterGroup.TestePratico;
 
 public class Startup
 {
-    public IConfiguration configuracao { get; }
+    public IConfiguration Configuracao { get; }
 
     public Startup(IConfiguration configuration)
     {
-        configuracao = configuration;
+        Configuracao = configuration;
     }
 
     public void ConfigureServices(IServiceCollection services)
     {
         services
-            .ConfigurarLog(configuracao)
+            .ConfigurarLog(Configuracao)
             .ConfigurarSwagger()
             .AddControllers();
     }
