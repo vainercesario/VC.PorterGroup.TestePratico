@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VC.PorterGroup.TestePratico
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NumeroPorExtenso", "NumeroPorExtenso", "{872DF6A0-DD51-45BC-A891-150EC3EE71C8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SomaDeArray", "SomaDeArray", "{783B11E5-F11D-4D0D-9AA1-08EEFD667310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Teste", "test\VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Teste\VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Teste.csproj", "{FD61638D-0BFE-4114-8C95-3FA7FFAFB508}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{096657E0-F98F-4398-9873-D0AD96029443}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{096657E0-F98F-4398-9873-D0AD96029443}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{096657E0-F98F-4398-9873-D0AD96029443}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD61638D-0BFE-4114-8C95-3FA7FFAFB508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD61638D-0BFE-4114-8C95-3FA7FFAFB508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD61638D-0BFE-4114-8C95-3FA7FFAFB508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD61638D-0BFE-4114-8C95-3FA7FFAFB508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,8 @@ Global
 		{FA29F398-2B29-4423-9F56-E19C69D28282} = {872DF6A0-DD51-45BC-A891-150EC3EE71C8}
 		{096657E0-F98F-4398-9873-D0AD96029443} = {872DF6A0-DD51-45BC-A891-150EC3EE71C8}
 		{872DF6A0-DD51-45BC-A891-150EC3EE71C8} = {E6DFB943-E058-43ED-B049-DA849766149E}
+		{783B11E5-F11D-4D0D-9AA1-08EEFD667310} = {E6DFB943-E058-43ED-B049-DA849766149E}
+		{FD61638D-0BFE-4114-8C95-3FA7FFAFB508} = {783B11E5-F11D-4D0D-9AA1-08EEFD667310}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C2CB1F6-4B06-40C4-A627-A0857CF736E0}
