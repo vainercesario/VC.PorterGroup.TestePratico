@@ -15,4 +15,9 @@
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VC.PorterGroup.TestePratico.Infra.Core\VC.PorterGroup.TestePratico.Infra.Core.csproj" />
+    <ProjectReference Include="..\..\src\VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio\VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.csproj" />
+  </ItemGroup>
+
 </Project>

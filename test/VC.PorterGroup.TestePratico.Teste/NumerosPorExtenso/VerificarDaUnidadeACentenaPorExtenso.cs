@@ -7,7 +7,7 @@ public class VerificarDaUnidadeACentenaPorExtenso
 {
     [TestMethod]
     [DataRow(9, "Nove")]
-    [DataRow(1, "Nove")]
+    [DataRow(1, "Um")]
     [DataRow(5, "Cinco")]
     [DataRow(2, "Dois")]
     public void VerificarNumerosDeUnidade(int numero, string retorno)

@@ -1,4 +1,7 @@
-﻿namespace VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Base;
+﻿using VC.PorterGroup.TestePratico.Infra.Core.Util.Enum;
+using VC.PorterGroup.TestePratico.Infra.Core.Util.Extensao;
+
+namespace VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Base;
 
 public abstract class NumeralComponente
 {

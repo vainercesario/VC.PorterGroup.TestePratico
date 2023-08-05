@@ -4,7 +4,7 @@ namespace VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Entidades;
 
 public class Unidade : NumeralComponente
 {
-    private static readonly string[] UNIDADES = { "", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove" };
+    private static readonly string[] UNIDADES = { "", "Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove" };
 
     public Unidade(int numero)
         : base(numero) { }

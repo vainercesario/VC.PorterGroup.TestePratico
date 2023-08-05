@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VC.PorterGroup.TestePratico.Infra.Core\VC.PorterGroup.TestePratico.Infra.Core.csproj" />
+  </ItemGroup>
+
 </Project>
