@@ -1,4 +1,4 @@
-﻿namespace VC.PorterGroup.TestePratico.Modulos;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ConfigurarAmbiente
 {
