@@ -1,6 +1,4 @@
-﻿using VC.PorterGroup.TestePratico.Modulos;
-
-namespace VC.PorterGroup.TestePratico;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
 public class Startup
 {
@@ -16,6 +14,7 @@ public class Startup
         services
             .ConfigurarLog(Configuracao)
             .ConfigurarSwagger()
+            .AdicionarServicos(Configuracao)
             .AddControllers();
     }
 

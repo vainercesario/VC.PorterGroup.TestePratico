@@ -1,6 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 
-namespace VC.PorterGroup.TestePratico;
+namespace Microsoft.Extensions.DependencyInjection;
 
 public static class InstalarSwagger
 {
