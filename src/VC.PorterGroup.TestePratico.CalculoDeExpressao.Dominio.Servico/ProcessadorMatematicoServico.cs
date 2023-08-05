@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Entidade;
 using VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Interface;
+using VC.PorterGroup.TestePratico.Infra.Core.Util.Extensao;
 
 namespace VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Servico;
 
@@ -12,17 +14,19 @@ internal sealed class ProcessadorMatematicoServico : IProcessadorMatematicoServi
         this._logger = logger;
     }
 
-    public decimal Calcular(string expressao)
+    public double Calcular(string expressao)
     {
         _logger.LogInformation("Realizar cálculo de expressão string.");
 
         ExpressaoMatematica expressaoMatematica = new(expressao);
 
-        var expressaoValida = expressaoMatematica.Validar();
+        (bool valido, List<string> erro) = expressaoMatematica.Validar();
 
-        if (expressaoValida.Valido)
+        if (valido)
+        {
             return expressaoMatematica.Calcular();
+        }
 
-        throw new ArgumentException(expressaoValida.Erro);
+        throw new ArgumentException(erro.Unificado(". "));
     }
 }

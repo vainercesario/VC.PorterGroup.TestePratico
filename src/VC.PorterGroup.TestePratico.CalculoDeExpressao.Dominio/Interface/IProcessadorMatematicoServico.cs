@@ -2,5 +2,5 @@
 
 public interface IProcessadorMatematicoServico
 {
-    decimal Calcular(string expressao);
+    double Calcular(string expressao);
 }
