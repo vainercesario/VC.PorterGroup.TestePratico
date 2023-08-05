@@ -24,7 +24,7 @@ public class ObjetosUnicosController : ControllerBase
         }
         catch
         {
-            return BadRequest("Não foi possível realizar a operação.");
+            return BadRequest();
         }
     }
 }

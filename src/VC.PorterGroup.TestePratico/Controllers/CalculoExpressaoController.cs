@@ -11,7 +11,7 @@ public class CalculoExpressaoController : ControllerBase
 
     public CalculoExpressaoController(IProcessadorMatematicoServico processadorMatematicoServico)
     {
-        this._processadorMatematicoServico = processadorMatematicoServico;
+        _processadorMatematicoServico = processadorMatematicoServico;
     }
 
     [HttpGet]
