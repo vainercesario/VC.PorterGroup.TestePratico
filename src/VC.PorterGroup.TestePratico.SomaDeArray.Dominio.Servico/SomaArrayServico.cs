@@ -1,13 +1,22 @@
-﻿namespace VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico;
+﻿using Microsoft.Extensions.Logging;
+
+namespace VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico;
 
 internal sealed class SomaArrayServico : ISomaArrayServico
 {
-    public SomaArrayServico()
+    private string INICIO_PROCESSAMENTO = $"Início somatório: ";
+    private string TEMINO_PROCESSAMENTO = $"Termino somatório: ";
+    private readonly ILogger<SomaArrayServico> logger;
+
+    public SomaArrayServico(ILogger<SomaArrayServico> logger)
     {
+        this.logger = logger;
     }
 
     public async Task<long> SomarAsync(IEnumerable<int> lista, CancellationToken cancellationToken)
     {
+        logger.LogInformation(INICIO_PROCESSAMENTO + $"{DateTime.Now}");
+
         long somatorio = 0;
         object objetoLock = new();
 
@@ -31,6 +40,7 @@ internal sealed class SomaArrayServico : ISomaArrayServico
             });
         }, cancellationToken);
 
+        logger.LogInformation(TEMINO_PROCESSAMENTO + $"{DateTime.Now}");
         return somatorio;
     }
 

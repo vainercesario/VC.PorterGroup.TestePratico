@@ -1,4 +1,5 @@
-﻿using VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Entidades;
+﻿using Microsoft.Extensions.Logging;
+using VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Entidades;
 using VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Interface;
 
 namespace VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Servico;
@@ -7,13 +8,17 @@ internal sealed class MontarNumeroPorExtensoService : IMontarNumeroPorExtensoSer
 {
     private const int POSICAO_INICIAL = 0;
     private const int POSICOES_DAS_CENTENAS = 3;
+    private readonly ILogger<MontarNumeroPorExtensoService> logger;
 
-    public MontarNumeroPorExtensoService()
+    public MontarNumeroPorExtensoService(ILogger<MontarNumeroPorExtensoService> logger)
     {
+        this.logger = logger;
     }
 
     public string GerarNumeroPorExtenso(decimal numero)
     {
+        logger.LogInformation("Executando a geração de número por extenso.");
+
         if (numero == 0)
             return "0 -> Zero";
 
