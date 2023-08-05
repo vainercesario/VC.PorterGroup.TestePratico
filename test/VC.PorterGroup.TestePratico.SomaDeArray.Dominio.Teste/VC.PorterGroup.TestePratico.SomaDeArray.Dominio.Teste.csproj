@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\VC.PorterGroup.TestePratico.Infra.Core\VC.PorterGroup.TestePratico.Infra.Core.csproj" />
     <ProjectReference Include="..\..\src\VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico\VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico.csproj" />
   </ItemGroup>
 
