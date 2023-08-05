@@ -15,12 +15,15 @@ internal sealed class ObjetosUnicosServico<T> : IObjetosUnicosServico<T>
     {
         logger.LogInformation("Realizar remoção de redundâncias");
 
-        HashSet<T> itensUnicos = new();
+        HashSet<string> itensUnicos = new();
         List<T> listaDeUnicos = new();
 
         foreach (T item in lista)
-            if (itensUnicos.Add(item))
+        {
+            string itemString = item.ToString();
+            if (itensUnicos.Add(itemString))
                 listaDeUnicos.Add(item);
+        }
 
         return listaDeUnicos;
     }
