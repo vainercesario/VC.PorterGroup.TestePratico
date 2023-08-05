@@ -5,6 +5,10 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+# Time Zone Brasil
+ENV TZ America/Sao_Paulo
+RUN sh -c "ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone"
+
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["VC.PorterGroup.TestePratico/VC.PorterGroup.TestePratico.csproj", "VC.PorterGroup.TestePratico/"]
