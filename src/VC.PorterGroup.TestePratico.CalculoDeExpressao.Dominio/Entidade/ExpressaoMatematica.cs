@@ -18,7 +18,8 @@ public class ExpressaoMatematica
 
         if (Expressao.PossuiOperadorMatematicoSequencial()
             || Expressao.PossuiOperadorMatematicoAoInicio()
-            || Expressao.PossuiOperadorMatematicoAoFinal())
+            || Expressao.PossuiOperadorMatematicoAoFinal()
+            || Expressao.PossuiCaracteresNaExpressaoMatematica())
         {
             erros.Add($"A expressão é inválida.");
         }
@@ -33,7 +34,7 @@ public class ExpressaoMatematica
             erros.Add($"Não existem dados para calcular.");
         }
 
-        if (!erros.Any())
+        if (erros.Any())
         {
             return (false, erros);
         }
@@ -44,10 +45,7 @@ public class ExpressaoMatematica
     public double Calcular()
     {
         DataTable dt = new();
-        DataColumn dc = new("Expressao", typeof(string), Expressao);
-        dt.Columns.Add(dc);
-        dt.Rows.Add(0);
-
-        return Convert.ToDouble((int)dt.Rows[0]["Expressao"]);
+        var resultado = dt.Compute(Expressao, "");
+        return Convert.ToDouble(resultado);
     }
 }

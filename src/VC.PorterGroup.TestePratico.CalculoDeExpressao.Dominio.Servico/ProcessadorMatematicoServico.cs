@@ -27,6 +27,6 @@ internal sealed class ProcessadorMatematicoServico : IProcessadorMatematicoServi
             return expressaoMatematica.Calcular();
         }
 
-        throw new ArgumentException(erro.Unificado(". "));
+        throw new ArithmeticException(erro.Unificado(". "));
     }
 }
