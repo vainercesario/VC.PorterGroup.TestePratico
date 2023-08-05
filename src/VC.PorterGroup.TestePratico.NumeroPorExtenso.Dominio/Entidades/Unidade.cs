@@ -14,6 +14,6 @@ public class Unidade : NumeralComponente
         if (Dezena == 1)
             return "";
 
-        return $"{((Unidade > 0 && (Dezena > 1 || (Centena > 1 && Dezena == 0))) ? " e " : "")}{UNIDADES[Unidade]}";
+        return $"{((Unidade > 0 && (Dezena > 1 || (Centena > 0 && Dezena == 0))) ? " e " : "")}{UNIDADES[Unidade]}";
     }
 }
