@@ -7,7 +7,7 @@ namespace VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Teste;
 public class VerificarSomatorioDeArray
 {
     [TestMethod]
-    public async Task ValidarSoma()
+    public async Task Converir_Soma_De_Inteiros_De_Array_Com_Sucesso()
     {
         var fakeLogger = new LoggerMock<SomaArrayServico>();
         ISomaArrayServico _somaArrayService = new SomaArrayServico(fakeLogger);

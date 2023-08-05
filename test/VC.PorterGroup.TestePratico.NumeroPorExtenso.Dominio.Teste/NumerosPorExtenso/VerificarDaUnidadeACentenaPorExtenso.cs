@@ -10,7 +10,7 @@ public class VerificarDaUnidadeACentenaPorExtenso
     [DataRow(1, "Um")]
     [DataRow(5, "Cinco")]
     [DataRow(2, "Dois")]
-    public void VerificarNumerosDeUnidade(int numero, string retorno)
+    public void Conferir_Construcao_De_Numeros_De_Unidade_Sucesso(int numero, string retorno)
     {
         Unidade unidade = new(numero);
 
@@ -23,7 +23,7 @@ public class VerificarDaUnidadeACentenaPorExtenso
     [DataRow(20, "Vinte")]
     [DataRow(53, "Cinquenta e Três")]
     [DataRow(22, "Vinte e Dois")]
-    public void VerificarNumerosDeDezenas(int numero, string retorno)
+    public void Conferir_Construcao_De_Numeros_De_Dezenas_Sucesso(int numero, string retorno)
     {
         Dezena dezena = new(new Unidade(numero));
 
@@ -37,7 +37,7 @@ public class VerificarDaUnidadeACentenaPorExtenso
     [DataRow(200, "Duzentos")]
     [DataRow(533, "Quinhentos e Trinta e Três")]
     [DataRow(221, "Duzentos e Vinte e Um")]
-    public void VerificarNumerosDeCentenas(int numero, string retorno)
+    public void Conferir_Construcao_De_Numeros_De_Centenas_Sucesso(int numero, string retorno)
     {
         Centena centena = new(new Dezena(new Unidade(numero)));
 
