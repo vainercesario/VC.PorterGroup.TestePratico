@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico;
+using VC.PorterGroup.TestePratico.ViewModel;
 
 namespace VC.PorterGroup.TestePratico.Controllers;
 
@@ -15,7 +16,7 @@ public class SomaDeArrayController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] InteirosViewModel lista, CancellationToken cancellationToken)
+    public async Task<IActionResult> Post([FromBody] ArrayDeIntViewModel lista, CancellationToken cancellationToken)
     {
         try
         {
@@ -23,19 +24,15 @@ public class SomaDeArrayController : ControllerBase
         }
         catch (OverflowException)
         {
-            return BadRequest("Ocorreu erro ao processar a informação.");
+            return BadRequest("O somatório resultou em um valor não suportado de retorno, tente reduzir o tamanho solicitado.");
         }
         catch (Exception)
         {
+            return BadRequest("Ocorreu erro ao processar a informação.");
         }
         finally
         {
             GC.SuppressFinalize(this);
         }
     }
-}
-
-public class InteirosViewModel
-{
-    public List<int> Numeros { get; set; }
 }
