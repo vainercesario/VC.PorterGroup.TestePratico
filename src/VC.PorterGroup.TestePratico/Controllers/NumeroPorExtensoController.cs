@@ -23,7 +23,7 @@ public class NumeroPorExtensoController : ControllerBase
         }
         catch
         {
-            return BadRequest("O dado enviado está fora do padrão para conversão. Informe um número sem casas decimais.");
+            return BadRequest();
         }
     }
 }
