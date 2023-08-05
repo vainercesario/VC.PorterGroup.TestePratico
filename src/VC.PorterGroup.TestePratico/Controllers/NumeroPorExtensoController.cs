@@ -15,8 +15,14 @@ public class NumeroPorExtensoController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult Get([FromBody] decimal numero)
+    public IActionResult Get(decimal numero)
     {
-        return Ok(_montarNumeroService.GerarNumeroPorExtenso(numero));
+        try
+        {
+            return Ok(_montarNumeroService.GerarNumeroPorExtenso(numero));
+        }catch {
+            return BadRequest("O dado enviado está fora do padrão para conversão. Informe um número sem casas decimais.");
+        }
+        
     }
 }
