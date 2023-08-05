@@ -22,17 +22,13 @@ public class SomaDeArrayController : ControllerBase
         {
             return Ok(await _somaArrayServico.SomarAsync(lista.Numeros, cancellationToken));
         }
-        catch (OverflowException)
+        catch (OverflowException oex)
         {
-            return BadRequest("O somatório resultou em um valor não suportado de retorno, tente reduzir o tamanho solicitado.");
+            return BadRequest(oex);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            return BadRequest("Ocorreu erro ao processar a informação.");
-        }
-        finally
-        {
-            GC.SuppressFinalize(this);
+            return BadRequest($"Ocorreu erro ao processar a informação. {ex}");
         }
     }
 }
