@@ -1,3 +1,5 @@
+using VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Interface;
+using VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Servico;
 using VC.PorterGroup.TestePratico.Infra.Core.Util.Mock;
 
 namespace VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Teste;
@@ -8,7 +10,7 @@ public class CalculoDeExpressoesString
     [TestMethod]
     public void Calculadora_De_Expressao_De_String_Com_Sucesso()
     {
-        var fakeLogger = new LoggerMock<ProcessadorMatematicoService>();
+        var fakeLogger = new LoggerMock<ProcessadorMatematicoServico>();
 
         List<(string expressao, decimal resultado)> listaDeTestes = new()
         {
@@ -21,7 +23,7 @@ public class CalculoDeExpressoesString
             ("2 + 2 / 4 + 10 * 2 / 4", 7.25m),
         };
 
-        IProcessadorMatematicoService processadorMatematicoService = new ProcessadorMatematicoService(fakeLogger);
+        ProcessadorMatematicoServico processadorMatematicoService = new ProcessadorMatematicoServico(fakeLogger);
 
         foreach (var obj in listaDeTestes)
             Assert.AreEqual(obj.resultado, processadorMatematicoService.Calcular(obj.expressao));
@@ -30,7 +32,7 @@ public class CalculoDeExpressoesString
     [TestMethod]
     public void Calculadora_De_Expressao_De_String_Com_Insucesso_De_Expressao_Invalida()
     {
-        var fakeLogger = new LoggerMock<ProcessadorMatematicoService>();
+        var fakeLogger = new LoggerMock<ProcessadorMatematicoServico>();
 
         List<(string expressao, string erro)> listaDeTestes = new()
         {
@@ -39,7 +41,7 @@ public class CalculoDeExpressoesString
             ("2 * 3 abcd", "A expressão é inválida")
         };
 
-        IProcessadorMatematicoService processadorMatematicoService = new ProcessadorMatematicoService(fakeLogger);
+        ProcessadorMatematicoServico processadorMatematicoService = new ProcessadorMatematicoServico(fakeLogger);
 
         foreach (var obj in listaDeTestes)
         {
@@ -50,7 +52,7 @@ public class CalculoDeExpressoesString
 
     public void Calculadora_De_Expressao_De_String_Com_Insucesso_Na_Divisao()
     {
-        var fakeLogger = new LoggerMock<ProcessadorMatematicoService>();
+        var fakeLogger = new LoggerMock<ProcessadorMatematicoServico>();
 
         List<(string expressao, string erro)> listaDeTestes = new()
         {
@@ -58,7 +60,7 @@ public class CalculoDeExpressoesString
             ("1 + 1 + 1 / 0", "A expressão possui divisão por zero, não é possível calcular."),
         };
 
-        IProcessadorMatematicoService processadorMatematicoService = new ProcessadorMatematicoService(fakeLogger);
+        IProcessadorMatematicoServico processadorMatematicoService = new ProcessadorMatematicoServico(fakeLogger);
 
         foreach (var obj in listaDeTestes)
         {
