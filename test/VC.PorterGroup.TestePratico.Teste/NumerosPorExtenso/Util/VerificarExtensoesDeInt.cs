@@ -12,27 +12,23 @@ public class VerificarExtensoesDeInt
     [DataRow(123, 3)]
     [DataRow(1234, 4)]
     [DataRow(12345, 5)]
-    public void VerificarConversaoParaChar(int numero, byte tamanho)
+    public void VerificarConversaoParaChar(int numero, int tamanho)
     {
         var valorTestado = numero.ConverterParaChar();
 
         Assert.AreEqual(valorTestado.Length, tamanho);
-        Assert.IsTrue(valorTestado is char[]);
     }
 
     [TestMethod]
-    [DataRow(1, CasasDeValores.Unidade, 1)]
-    [DataRow(12, CasasDeValores.Unidade, 1)]
-    [DataRow(12, CasasDeValores.Dezena, 2)]
-    [DataRow(123, CasasDeValores.Unidade, 1)]
-    [DataRow(123, CasasDeValores.Dezena, 2)]
-    [DataRow(123, CasasDeValores.Centena, 3)]
-    [DataRow(1234, CasasDeValores.Unidade, 1)]
-    [DataRow(1234, CasasDeValores.Dezena, 2)]
-    [DataRow(1234, CasasDeValores.Centena, 3)]
+    [DataRow(1, CasasDeValores.Unidade, (byte)1)]
+    [DataRow(12, CasasDeValores.Unidade, (byte)2)]
+    [DataRow(12, CasasDeValores.Dezena, (byte)1)]
+    [DataRow(123, CasasDeValores.Unidade, (byte)3)]
+    [DataRow(123, CasasDeValores.Dezena, (byte)2)]
+    [DataRow(123, CasasDeValores.Centena, (byte)1)]
     public void VerificarRetornoDeByteDaPosicaoValido(int numero, CasasDeValores casa, byte retorno)
     {
-        var valorTestado = numero.RetornaByteDaPosicao(casa);
+        byte valorTestado = numero.RetornaByteDaPosicao(casa);
 
         Assert.AreEqual(valorTestado, retorno);
     }

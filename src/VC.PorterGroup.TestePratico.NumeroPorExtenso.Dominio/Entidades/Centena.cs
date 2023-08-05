@@ -4,7 +4,7 @@ namespace VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Entidades;
 
 public class Centena : NumeralDecorador
 {
-    private static readonly string[] CENTENAS = { "cem", "cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos" };
+    private static readonly string[] CENTENAS = { "Cem", "Cento", "Duzentos", "Trezentos", "Quatrocentos", "Quinhentos", "Seiscentos", "Setecentos", "Oitocentos", "Novecentos" };
 
     public Centena(NumeralComponente numeral) : base(numeral)
     {
@@ -12,7 +12,7 @@ public class Centena : NumeralDecorador
 
     public override string EscreverPorExtenso()
     {
-        if (Centena == 100)
+        if (Numero == 100)
             return $"{CENTENAS[0]}";
 
         return $"{CENTENAS[Centena]}{base.EscreverPorExtenso()}";
