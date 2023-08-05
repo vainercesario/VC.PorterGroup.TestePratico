@@ -33,6 +33,7 @@ public class VerificarDaUnidadeACentenaPorExtenso
     [TestMethod]
     [DataRow(919, "Novecentos e Dezenove")]
     [DataRow(100, "Cem")]
+    [DataRow(105, "Cento e Cinco")]
     [DataRow(200, "Duzentos")]
     [DataRow(533, "Quinhentos e Trinta e Três")]
     [DataRow(221, "Duzentos e Vinte e Um")]
