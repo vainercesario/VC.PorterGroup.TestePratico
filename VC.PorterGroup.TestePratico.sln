@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Infra", "3-Infra", "{5447
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VC.PorterGroup.TestePratico", "src\VC.PorterGroup.TestePratico\VC.PorterGroup.TestePratico.csproj", "{82055A0C-A3E9-4332-B898-A4751B387CFE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Testes", "4-Testes", "{A9FA48CC-9355-4F5D-80E7-5EC20648E8B5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio", "src\VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio\VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.csproj", "{6C9148A8-484F-4EF9-AD1A-5E76F5C59FA5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VC.PorterGroup.TestePratico.Infra.Core", "src\VC.PorterGroup.TestePratico.Infra.Core\VC.PorterGroup.TestePratico.Infra.Core.csproj", "{2C6C3224-794A-4FD4-A8DF-6DE70B02AF64}"
