@@ -1,3 +1,6 @@
+using VC.PorterGroup.TestePratico.Infra.Core.Util.Mock;
+using VC.PorterGroup.TestePratico.ObjetosUnicos.Dominio.Servico;
+
 namespace VC.PorterGroup.TestePratico.ObjetosUnicos.Dominio.Teste;
 
 [TestClass]
@@ -6,36 +9,42 @@ public class CheckagemListaObjetosUnicos
     [TestMethod]
     public void Remover_Duplicidades_Lista_De_Inteiros_Success()
     {
-        List<int> originalList = new List<int> { 1, 2, 3, 2, 4, 5, 1, 3, 4, 3, 5 };
-        List<int> expectedUniqueList = new List<int> { 1, 2, 3, 4, 5 };
+        var fakeLogger = new LoggerMock<ObjetosUnicosServico<int>>();
 
-        IObjetosUnicosService service = new ObjetosUnicosService();
-        List<int> uniqueList = service.RemoverRedundancias(originalList);
+        List<int> listaOriginal = new() { 1, 2, 3, 2, 4, 5, 1, 3, 4, 3, 5 };
+        List<int> listaUnicaEsperada = new() { 1, 2, 3, 4, 5 };
 
-        CollectionAssert.AreEqual(expectedUniqueList, uniqueList);
+        IObjetosUnicosServico<int> servico = new ObjetosUnicosServico<int>(fakeLogger);
+        List<int> listaUnica = servico.RemoverRedundancias(listaOriginal);
+
+        CollectionAssert.AreEqual(listaUnicaEsperada, listaUnica);
     }
 
     [TestMethod]
     public void Remover_Duplicidades_Lista_De_Strings_Success()
     {
-        List<string> originalList = new List<string> { "carro", "mala", "carteira", "mochila", "carteira", "carro", "carro" };
-        List<string> expectedUniqueList = new List<string> { "carro", "mala", "carteira" };
+        var fakeLogger = new LoggerMock<ObjetosUnicosServico<string>>();
 
-        IObjetosUnicosService service = new ObjetosUnicosService();
-        List<string> uniqueList = service.RemoverRedundancias(originalList);
+        List<string> listaOriginal = new() { "carro", "mala", "carteira", "mochila", "carteira", "carro", "carro" };
+        List<string> listaUnicaEsperada = new() { "carro", "mala", "carteira", "mochila" };
 
-        CollectionAssert.AreEqual(expectedUniqueList, uniqueList);
+        IObjetosUnicosServico<string> servico = new ObjetosUnicosServico<string>(fakeLogger);
+        List<string> listaUnica = servico.RemoverRedundancias(listaOriginal);
+
+        CollectionAssert.AreEqual(listaUnicaEsperada, listaUnica);
     }
 
     [TestMethod]
     public void Remover_Duplicidades_Lista_Diversos_Success()
     {
-        List<object> originalList = new List<object> { 1, "carro", 2.5, "carro", 3, 1 };
-        List<object> expectedUniqueList = new List<object> { 1, "carro", 2.5, 3 };
+        var fakeLogger = new LoggerMock<ObjetosUnicosServico<object>>();
 
-        IObjetosUnicosService service = new ObjetosUnicosService();
-        List<object> uniqueList = service.RemoverRedundancias(originalList);
+        List<object> listaOriginal = new() { 1, "carro", 2.5, "carro", 3, 1 };
+        List<object> listaUnicaEsperada = new() { 1, "carro", 2.5, 3 };
 
-        CollectionAssert.AreEqual(expectedUniqueList, uniqueList);
+        IObjetosUnicosServico<object> servico = new ObjetosUnicosServico<object>(fakeLogger);
+        List<object> listaUnica = servico.RemoverRedundancias(listaOriginal);
+
+        CollectionAssert.AreEqual(listaUnicaEsperada, listaUnica);
     }
 }
