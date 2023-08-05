@@ -1,4 +1,6 @@
-﻿namespace VC.PorterGroup.TestePratico.Teste.NumerosPorExtenso;
+﻿using VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Entidades;
+
+namespace VC.PorterGroup.TestePratico.Teste.NumerosPorExtenso;
 
 [TestClass]
 public class VerificarDaUnidadeACentenaPorExtenso
@@ -10,9 +12,9 @@ public class VerificarDaUnidadeACentenaPorExtenso
     [DataRow(2, "Dois")]
     public void VerificarNumerosDeUnidade(int numero, string retorno)
     {
-        Unidades unidade = new Unidades(numero);
+        Unidade unidade = new(numero);
 
-        Assert.AreEqual(unidade.EscreverPorExtenso(), retorno);
+        Assert.AreEqual(retorno, unidade.EscreverPorExtenso());
     }
 
     [TestMethod]
@@ -23,9 +25,9 @@ public class VerificarDaUnidadeACentenaPorExtenso
     [DataRow(22, "Vinte e Dois")]
     public void VerificarNumerosDeDezenas(int numero, string retorno)
     {
-        Dezenas dezena = new(new Unidades(numero));
+        Dezena dezena = new(new Unidade(numero));
 
-        Assert.AreEqual(dezena.EscreverPorExtenso(), retorno);
+        Assert.AreEqual(retorno, dezena.EscreverPorExtenso());
     }
 
     [TestMethod]
@@ -36,8 +38,8 @@ public class VerificarDaUnidadeACentenaPorExtenso
     [DataRow(221, "Duzentos e Vinte e Um")]
     public void VerificarNumerosDeCentenas(int numero, string retorno)
     {
-        Centenas centena = new(new Dezenas(new Unidades(numero)));
+        Centena centena = new(new Dezena(new Unidade(numero)));
 
-        Assert.AreEqual(centena.EscreverPorExtenso(), retorno);
+        Assert.AreEqual(retorno, centena.EscreverPorExtenso());
     }
 }
