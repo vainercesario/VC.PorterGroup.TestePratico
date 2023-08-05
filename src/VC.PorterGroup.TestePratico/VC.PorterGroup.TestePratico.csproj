@@ -17,4 +17,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Servico\VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Servico.csproj" />
+  </ItemGroup>
+
 </Project>

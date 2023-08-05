@@ -14,7 +14,7 @@ public class Startup
         services
             .ConfigurarLog(Configuracao)
             .ConfigurarSwagger()
-            .AdicionarServicos(Configuracao)
+            .AdicionarServicos()
             .AddControllers();
     }
 
