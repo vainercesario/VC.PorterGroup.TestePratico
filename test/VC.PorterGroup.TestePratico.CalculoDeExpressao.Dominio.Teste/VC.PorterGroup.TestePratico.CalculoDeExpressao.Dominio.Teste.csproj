@@ -15,4 +15,10 @@
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Servico\VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Servico.csproj" />
+    <ProjectReference Include="..\..\src\VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio\VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.csproj" />
+    <ProjectReference Include="..\..\src\VC.PorterGroup.TestePratico.Infra.Core\VC.PorterGroup.TestePratico.Infra.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,6 @@
-﻿namespace VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Teste.Unidade;
+﻿using VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Entidade;
+
+namespace VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Teste.Unidade;
 
 [TestClass]
 public class TesteUnidadeExpressaoMatematica
@@ -36,7 +38,7 @@ public class TesteUnidadeExpressaoMatematica
 
         foreach (var obj in listaDeTestes)
         {
-            Assert.AreEqual(obj.validacao, expressaoMatematica.Validar);
+            Assert.AreEqual(obj.validacao, expressaoMatematica.Validar());
         }
     }
 
@@ -45,7 +47,7 @@ public class TesteUnidadeExpressaoMatematica
     {
         List<(string expressao, (bool valido, string erro) validacao)> listaDeTestes = new()
         {
-            ("* 2 * 4", (false, "A expressão é inválida")),
+            ("* 2 * 4", (false, "A expressão é inválida.")),
             ("12 / 0 + 13", (false, "A expressão possui divisão por zero, não é possível calcular."))
         };
 
@@ -53,7 +55,7 @@ public class TesteUnidadeExpressaoMatematica
 
         foreach (var obj in listaDeTestes)
         {
-            Assert.AreEqual(obj.validacao, expressaoMatematica.Validar);
+            Assert.AreEqual(obj.validacao, expressaoMatematica.Validar());
         }
     }
 
