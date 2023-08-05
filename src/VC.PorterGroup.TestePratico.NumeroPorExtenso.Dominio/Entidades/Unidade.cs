@@ -12,7 +12,9 @@ public class Unidade : NumeralComponente
     public override string EscreverPorExtenso()
     {
         if (Dezena == 1)
+        {
             return "";
+        }
 
         return $"{((Unidade > 0 && (Dezena > 1 || (Centena > 0 && Dezena == 0))) ? " e " : "")}{UNIDADES[Unidade]}";
     }

@@ -13,7 +13,9 @@ public class Centena : NumeralDecorador
     public override string EscreverPorExtenso()
     {
         if (Numero == 100)
+        {
             return $"{CENTENAS[0]}";
+        }
 
         return $"{CENTENAS[Centena]}{base.EscreverPorExtenso()}";
     }

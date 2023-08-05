@@ -34,10 +34,12 @@ public class Milhar
             var composicaoValor = ListaDeCentenas[i];
 
             if (composicaoValor.Numero > 0)
+            {
                 retorno +=
                     $"{(i == 0 ? "" : ", ")}" +
                     $"{composicaoValor.EscreverPorExtenso()}" +
                     $"{PopularUnidadeMilhar(i, composicaoValor.Numero)}";
+            }
         }
 
         return $"{Numero} -> {retorno.Trim()}";
