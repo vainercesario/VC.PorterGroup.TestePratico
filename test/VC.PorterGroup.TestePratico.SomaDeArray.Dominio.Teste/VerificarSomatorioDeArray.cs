@@ -1,15 +1,23 @@
-﻿namespace VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Teste;
+﻿using VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico;
+
+namespace VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Teste;
 
 [TestClass]
 public class VerificarSomatorioDeArray
 {
-    [TestMethod]
-    public void ValidarSoma()
+    private readonly ISomaArrayServico _somaArrayService;
+
+    public VerificarSomatorioDeArray(ISomaArrayServico somaArrayService)
     {
-        var lista = new List<int>() { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+        this._somaArrayService = somaArrayService;
+    }
 
-        ISomaArrayService somaArray = new SomaArrayService();
+    [TestMethod]
+    public async Task ValidarSoma()
+    {
+        List<int> listaCheckagem = new() { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+        IEnumerable<int> lista = listaCheckagem;
 
-        Assert.AreEqual(lista.Sum(), somaArray.Somar(lista));
+        Assert.AreEqual(lista.Sum(), await _somaArrayService.SomarAsync(lista, CancellationToken.None));
     }
 }

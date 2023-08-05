@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SomaDeArray", "SomaDeArray"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Teste", "test\VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Teste\VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Teste.csproj", "{FD61638D-0BFE-4114-8C95-3FA7FFAFB508}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico", "src\VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico\VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico.csproj", "{4EA3EEE8-6C3C-4DF7-8836-BDA5E96B190D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{FD61638D-0BFE-4114-8C95-3FA7FFAFB508}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD61638D-0BFE-4114-8C95-3FA7FFAFB508}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD61638D-0BFE-4114-8C95-3FA7FFAFB508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA3EEE8-6C3C-4DF7-8836-BDA5E96B190D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA3EEE8-6C3C-4DF7-8836-BDA5E96B190D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA3EEE8-6C3C-4DF7-8836-BDA5E96B190D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA3EEE8-6C3C-4DF7-8836-BDA5E96B190D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{872DF6A0-DD51-45BC-A891-150EC3EE71C8} = {E6DFB943-E058-43ED-B049-DA849766149E}
 		{783B11E5-F11D-4D0D-9AA1-08EEFD667310} = {E6DFB943-E058-43ED-B049-DA849766149E}
 		{FD61638D-0BFE-4114-8C95-3FA7FFAFB508} = {783B11E5-F11D-4D0D-9AA1-08EEFD667310}
+		{4EA3EEE8-6C3C-4DF7-8836-BDA5E96B190D} = {783B11E5-F11D-4D0D-9AA1-08EEFD667310}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C2CB1F6-4B06-40C4-A627-A0857CF736E0}
