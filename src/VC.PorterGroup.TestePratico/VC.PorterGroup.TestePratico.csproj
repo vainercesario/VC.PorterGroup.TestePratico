@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Servico\VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Servico.csproj" />
+    <ProjectReference Include="..\VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico\VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico.csproj" />
   </ItemGroup>
 
 </Project>
