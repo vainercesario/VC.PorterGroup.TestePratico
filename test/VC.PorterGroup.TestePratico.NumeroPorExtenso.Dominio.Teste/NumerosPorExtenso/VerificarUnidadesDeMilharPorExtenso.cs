@@ -8,7 +8,7 @@ namespace VC.PorterGroup.TestePratico.Teste.NumerosPorExtenso;
 public class VerificarUnidadesDeMilharPorExtenso
 {
     [TestMethod]
-    public void VerificarNumeroPorExtenso()
+    public void Conferir_Construcao_De_Numeros_De_Milhares_Por_Extenso_Sucesso()
     {
         var fakeLogger = new LoggerMock<MontarNumeroPorExtensoService>();
 
