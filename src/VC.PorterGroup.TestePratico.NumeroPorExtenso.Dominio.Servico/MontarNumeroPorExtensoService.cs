@@ -20,10 +20,14 @@ internal sealed class MontarNumeroPorExtensoService : IMontarNumeroPorExtensoSer
         logger.LogInformation("Executando a geração de número por extenso.");
 
         if (numero == 0)
+        {
             return "0 -> Zero";
+        }
 
         if (numero < 0)
+        {
             return GerarNumeroPorExtenso(Math.Abs(numero)) + " negativo";
+        }
 
         ComposicaoDoNumeral(numero,
             out string numeroEmString,

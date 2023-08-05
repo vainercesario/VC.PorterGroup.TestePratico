@@ -15,7 +15,7 @@ internal sealed class SomaArrayServico : ISomaArrayServico
 
     public async Task<long> SomarAsync(IEnumerable<int> lista, CancellationToken cancellationToken)
     {
-        logger.LogInformation(INICIO_PROCESSAMENTO + $"{DateTime.Now}");
+        logger.LogInformation($"{INICIO_PROCESSAMENTO}{DateTime.Now}");
 
         long somatorio = 0;
         object objetoLock = new();
@@ -40,7 +40,7 @@ internal sealed class SomaArrayServico : ISomaArrayServico
             });
         }, cancellationToken);
 
-        logger.LogInformation(TEMINO_PROCESSAMENTO + $"{DateTime.Now}");
+        logger.LogInformation($"{TEMINO_PROCESSAMENTO}{DateTime.Now}");
         return somatorio;
     }
 
