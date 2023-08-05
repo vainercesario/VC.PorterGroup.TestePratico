@@ -1,4 +1,5 @@
-﻿using VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico;
+﻿using VC.PorterGroup.TestePratico.Infra.Core.Util.Mock;
+using VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Servico;
 
 namespace VC.PorterGroup.TestePratico.SomaDeArray.Dominio.Teste;
 
@@ -8,7 +9,8 @@ public class VerificarSomatorioDeArray
     [TestMethod]
     public async Task ValidarSoma()
     {
-        ISomaArrayServico _somaArrayService = new SomaArrayServico();
+        var fakeLogger = new LoggerMock<SomaArrayServico>();
+        ISomaArrayServico _somaArrayService = new SomaArrayServico(fakeLogger);
 
         List<int> listaCheckagem1 = new() { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
         List<int> listaCheckagem2 = new() { 32, 145, 21, 31, 58, 49, 321, 1, 93, 158, 43, 47, 79, 1, 2, 3 };
