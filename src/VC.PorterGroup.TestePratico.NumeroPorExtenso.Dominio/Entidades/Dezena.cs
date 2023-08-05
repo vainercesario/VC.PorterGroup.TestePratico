@@ -4,8 +4,8 @@ namespace VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Entidades;
 
 public class Dezena : NumeralDecorador
 {
-    private static readonly string[] DEZENAS_INICIAIS = { "dez", "onze", "doze", "treze", "catorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove" };
-    private static readonly string[] DEZENAS = { "", "", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa" };
+    private static readonly string[] DEZENAS_INICIAIS = { "Dez", "Onze", "Doze", "Treze", "Catorze", "Quinze", "Dezesseis", "Dezessete", "Dezoito", "Dezenove" };
+    private static readonly string[] DEZENAS = { "", "", "Vinte", "Trinta", "Quarenta", "Cinquenta", "Sessenta", "Setenta", "Oitenta", "Noventa" };
 
     public Dezena(NumeralComponente numeral)
         : base(numeral)
