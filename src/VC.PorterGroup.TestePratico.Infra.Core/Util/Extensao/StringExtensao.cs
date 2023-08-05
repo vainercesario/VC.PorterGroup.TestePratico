@@ -45,7 +45,13 @@ public static class OperadoresMatematicosStringExtensao
 
     public static bool PossuiOperadorMatematicoDivisaoPorZero(this string valor)
     {
-        string expressao = @"\/0"; ;
+        string expressao = @"\/0";
+        return Regex.IsMatch(valor, expressao);
+    }
+
+    public static bool PossuiCaracteresNaExpressaoMatematica(this string valor)
+    {
+        string expressao = "[a-zA-Z]";
         return Regex.IsMatch(valor, expressao);
     }
 }

@@ -6,38 +6,18 @@ namespace VC.PorterGroup.TestePratico.CalculoDeExpressao.Dominio.Teste.Unidade;
 public class TesteUnidadeExpressaoMatematica
 {
     [TestMethod]
-    public void Expressao_Matematica_Quebrada_Em_Array_De_Itens()
-    {
-        List<(string expressao, List<string> itens)> listaDeTestes = new()
-        {
-            ("2 * 4", new List<string>(){"2","*","4"}),
-            ("21 * 4 + 5", new List<string>(){"21", "*", "4", "+", "5"}),
-            ("37 + 1 + 4* 2", new List<string>(){"37","+", "1", "+","4","*","2"}),
-            ("- 12 + 1 + 4* 2", new List<string>(){"0", "-", "12","+", "1", "+","4","*","2"})
-        };
-
-        ExpressaoMatematica expressaoMatematica = new(expressao);
-
-        foreach (var obj in listaDeTestes)
-        {
-            CollectionAssert.AreEqual(obj.itens, expressaoMatematica.Posicoes);
-        }
-    }
-
-    [TestMethod]
     public void Expressao_Matematica_Valida_Com_Sucesso()
     {
-        List<(string expressao, (bool valido, string erro) validacao)> listaDeTestes = new()
+        List<(string expressao, (bool valido, List<string>? erro) validacao)> listaDeTestes = new()
         {
-            ("21 * 4 + 5", (true,"")),
-            ("37 + 1 + 4* 2", (true,"")),
-            ("- 12 + 1 + 4* 2", (true,"")),
+            (new("21 * 4 + 5"), (true, null)),
+            (new("37 + 1 + 4* 2"), (true, null)),
+            (new("- 12 + 1 + 4* 2"), (true, null)),
         };
-
-        ExpressaoMatematica expressaoMatematica = new(expressao);
 
         foreach (var obj in listaDeTestes)
         {
+            ExpressaoMatematica expressaoMatematica = new(obj.expressao);
             Assert.AreEqual(obj.validacao, expressaoMatematica.Validar());
         }
     }
@@ -45,22 +25,33 @@ public class TesteUnidadeExpressaoMatematica
     [TestMethod]
     public void Expressao_Matematica_Invalida_Com_Sucesso()
     {
-        List<(string expressao, (bool valido, string erro) validacao)> listaDeTestes = new()
+        List<(string expressao, (bool valido, List<string> erro) validacao)> listaDeTestes = new()
         {
-            ("* 2 * 4", (false, "A expressão é inválida.")),
-            ("12 / 0 + 13", (false, "A expressão possui divisão por zero, não é possível calcular."))
+            (new("* 2 * 4"), (false, new List<string>(){"A expressão é inválida." })),
+            (new("12 / 0 + 13"), (false, new List<string>(){"Não é possível realizar divisão por zero."}))
         };
 
-        ExpressaoMatematica expressaoMatematica = new(expressao);
-
-        foreach (var obj in listaDeTestes)
+        foreach (var (expressao, validacao) in listaDeTestes)
         {
-            Assert.AreEqual(obj.validacao, expressaoMatematica.Validar());
+            ExpressaoMatematica expressaoMatematica = new(expressao);
+            CollectionAssert.AreEqual(validacao.erro, expressaoMatematica.Validar().Erro);
         }
     }
 
     [TestMethod]
-    public void Expressao_Matematica_Calculada()
+    public void Expressao_Matematica_Calculada_Com_Sucesso()
     {
+        List<(string expressao, double valor)> listaDeTestes = new()
+        {
+            (new("2 * 4"), 8),
+            (new("12 / 2 + 13"), 19),
+            (new("40 + 12 / 2 + 13"), 59)
+        };
+
+        foreach (var (expressao, valor) in listaDeTestes)
+        {
+            ExpressaoMatematica expressaoMatematica = new(expressao);
+            Assert.AreEqual(valor, expressaoMatematica.Calcular());
+        }
     }
 }
