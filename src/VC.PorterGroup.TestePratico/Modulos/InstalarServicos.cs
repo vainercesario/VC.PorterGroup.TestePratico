@@ -6,6 +6,7 @@ public static class InstalarDependencias
     {
         services.AdicionarNumeroPorExtensoServicos();
         services.AdicionarSomaDeArrayServicos();
+        services.AdicionarObjetosUnicosServicos();
 
         return services;
     }
