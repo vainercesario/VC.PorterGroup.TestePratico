@@ -1,7 +1,7 @@
 ﻿using VC.PorterGroup.TestePratico.Infra.Core.Util.Enum;
 using VC.PorterGroup.TestePratico.Infra.Core.Util.Extensao;
 
-namespace VC.PorterGroup.TestePratico.Teste.NumerosPorExtenso.Util;
+namespace VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Teste.Util;
 
 [TestClass]
 public class VerificarExtensoesDeInt
