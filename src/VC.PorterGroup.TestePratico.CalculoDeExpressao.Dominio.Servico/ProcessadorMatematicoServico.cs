@@ -18,8 +18,11 @@ internal sealed class ProcessadorMatematicoServico : IProcessadorMatematicoServi
 
         ExpressaoMatematica expressaoMatematica = new(expressao);
 
-        expressaoMatematica.Validar();
+        var expressaoValida = expressaoMatematica.Validar();
 
-        return expressaoMatematica.Calcular();
+        if (expressaoValida.Valido)
+            return expressaoMatematica.Calcular();
+
+        throw new ArgumentException(expressaoValida.Erro);
     }
 }
