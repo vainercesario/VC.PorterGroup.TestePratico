@@ -1,4 +1,5 @@
-﻿using VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Interface;
+﻿using VC.PorterGroup.TestePratico.Infra.Core.Util.Mock;
+using VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Interface;
 using VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Servico;
 
 namespace VC.PorterGroup.TestePratico.Teste.NumerosPorExtenso;
@@ -9,6 +10,8 @@ public class VerificarUnidadesDeMilharPorExtenso
     [TestMethod]
     public void VerificarNumeroPorExtenso()
     {
+        var fakeLogger = new LoggerMock<MontarNumeroPorExtensoService>();
+
         List<(decimal numero, string retorno)> listaDeTestes = new()
         {
             (0, "0 -> Zero"),
@@ -25,7 +28,7 @@ public class VerificarUnidadesDeMilharPorExtenso
             (1234567890123456789, "1234567890123456789 -> Um Quintilhão, Duzentos e Trinta e Quatro Quatrilhões, Quinhentos e Sessenta e Sete Trilhões, Oitocentos e Noventa Bilhões, Cento e Vinte e Três Milhões, Quatrocentos e Cinquenta e Seis Mil, Setecentos e Oitenta e Nove")
         };
 
-        IMontarNumeroPorExtensoService montarNumeroPorExtensoService = new MontarNumeroPorExtensoService();
+        IMontarNumeroPorExtensoService montarNumeroPorExtensoService = new MontarNumeroPorExtensoService(fakeLogger);
 
         foreach (var obj in listaDeTestes)
             Assert.AreEqual(obj.retorno, montarNumeroPorExtensoService.GerarNumeroPorExtenso(obj.numero));
