@@ -3,7 +3,7 @@ using VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Interface;
 
 namespace VC.PorterGroup.TestePratico.NumeroPorExtenso.Dominio.Servico;
 
-public sealed class MontarNumeroPorExtensoService : IMontarNumeroPorExtensoService
+internal sealed class MontarNumeroPorExtensoService : IMontarNumeroPorExtensoService
 {
     private const int POSICAO_INICIAL = 0;
     private const int POSICOES_DAS_CENTENAS = 3;
