@@ -21,9 +21,16 @@ public class SomaDeArrayController : ControllerBase
         {
             return Ok(await _somaArrayServico.SomarAsync(lista.Numeros, cancellationToken));
         }
-        catch
+        catch (OverflowException)
         {
             return BadRequest("Ocorreu erro ao processar a informação.");
+        }
+        catch (Exception)
+        {
+        }
+        finally
+        {
+            GC.SuppressFinalize(this);
         }
     }
 }
