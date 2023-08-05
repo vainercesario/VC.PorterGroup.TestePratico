@@ -22,7 +22,9 @@ internal sealed class ObjetosUnicosServico<T> : IObjetosUnicosServico<T>
         {
             string itemString = item.ToString();
             if (itensUnicos.Add(itemString))
+            {
                 listaDeUnicos.Add(item);
+            }
         }
 
         return listaDeUnicos;

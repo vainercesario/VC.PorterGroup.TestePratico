@@ -30,7 +30,9 @@ public class VerificarUnidadesDeMilharPorExtenso
 
         IMontarNumeroPorExtensoService montarNumeroPorExtensoService = new MontarNumeroPorExtensoService(fakeLogger);
 
-        foreach (var obj in listaDeTestes)
-            Assert.AreEqual(obj.retorno, montarNumeroPorExtensoService.GerarNumeroPorExtenso(obj.numero));
+        foreach (var (numero, retorno) in listaDeTestes)
+        {
+            Assert.AreEqual(retorno, montarNumeroPorExtensoService.GerarNumeroPorExtenso(numero));
+        }
     }
 }
