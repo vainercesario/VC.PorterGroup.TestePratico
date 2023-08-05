@@ -1,6 +1,6 @@
 ﻿using Serilog;
 
-namespace VC.PorterGroup.TestePratico;
+namespace Microsoft.Extensions.DependencyInjection;
 
 public static class InstaladorConfig
 {
