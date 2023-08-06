@@ -7,12 +7,12 @@ O maior desafio evitar métodos verbosos e acoplar um pattern para resolver o de
 
 ### 2. Como você lidou com a performance na implementação do desafio 2,considerando que o array pode ter até 1 milhão de números?
 
-Ao começar a planejar o desafio minha preocupação era já com o objeto recebido que já inicia massacrando a máquina com o consumo de memória. Qualquer manipulação nessa documento para quebrar seria em vão, em casos reais poderia ser aplicado outras abordagens para evitar esse tipo de ação. Mas quanto ao desafio quis evitar manipular a quebra do dados e foquei em consumir com maior capacidade de processamento da máquina, usei paralelismo com a capacidade de processador existente da máquina fazendo buscas com yield e realizando lock no paralelismo no ato da soma. Acabou ficando um processamento bastante performático.
-Nos testes adicionei um volume maior para processamento e acabei deixando o aplicativo sem um tratamento de tamanho da requisição.
+Ao começar a planejar o desafio minha preocupação era com o objeto recebido que já inicia com um certo peso de consumo de memoria. Evitar qualquer manipulação para a quebra de dados e foquei em consumir com maior capacidade de processamento da máquina, usei paralelismo com a capacidade de processador existente da máquina lendo o list com yield. Realizei lock no paralelismo no ato da soma. Acabou ficando um processamento bastante performático.
+Nos testes adicionei um volume maior para processamento e acabei deixando o aplicativo sem um tratamento de tamanho da requisição. minha preocupação na implementação era se o lock pudesse causar muita trava no processamento. Usei métricas e acompanhamento de consumo de maquina com newrelic. 
 
 ### 3. Como você lidou com os possíveis erros de entrada na implementação do desafio 3, como uma divisão por zero ou uma expressão inválida?
 
-Criei um tratamento de possibilidades que poderiam quebrar o algoritmo usando expressão regular. Então além da divisão por zero valido operadores nas extremidades ou operados consecutivos na expressão via string.
+Criei um tratamento de possibilidades que poderiam quebrar o algoritmo usando expressão regular. Então além da divisão por zero validei operadores nas extremidades, operados consecutivos e verificação de caracteres de texto na expressão recebida.
 
 ### 4. Como você implementou a função que remove objetos repetidos na implementação do desafio 4? Quais foram os principais desafios encontrados?
 
