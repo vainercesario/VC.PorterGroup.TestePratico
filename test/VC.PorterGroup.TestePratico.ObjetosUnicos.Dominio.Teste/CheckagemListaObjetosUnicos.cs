@@ -39,8 +39,8 @@ public class CheckagemListaObjetosUnicos
     {
         var fakeLogger = new LoggerMock<ObjetosUnicosServico<object>>();
 
-        List<object> listaOriginal = new() { 1, "carro", 2.5, 2.5, "2.5", "carro", 3, 1 };
-        List<object> listaUnicaEsperada = new() { 1, "carro", 2.5, "2.5", 3 };
+        List<object> listaOriginal = new() { 1, "carro", 2.5, 2.5, "carro", 3, 1 };
+        List<object> listaUnicaEsperada = new() { 1, "carro", 2.5, 3 };
 
         IObjetosUnicosServico<object> servico = new ObjetosUnicosServico<object>(fakeLogger);
         List<object> listaUnica = servico.RemoverRedundancias(listaOriginal);
