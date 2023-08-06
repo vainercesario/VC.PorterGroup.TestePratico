@@ -22,16 +22,15 @@ internal sealed class SomaArrayServico : ISomaArrayServico
 
         await Task.Run(() =>
         {
-            // Configurar opções de paralelismo
             ParallelOptions opcoes = new ParallelOptions
             {
-                MaxDegreeOfParallelism = Environment.ProcessorCount, // Limita o paralelismo ao número de núcleos da CPU
-                CancellationToken = cancellationToken // Associa o token de cancelamento
+                MaxDegreeOfParallelism = Environment.ProcessorCount,
+                CancellationToken = cancellationToken
             };
 
             Parallel.ForEach(BuscarValor(lista), opcoes, numero =>
             {
-                cancellationToken.ThrowIfCancellationRequested(); // Verifica se o cancelamento foi solicitado
+                cancellationToken.ThrowIfCancellationRequested();
 
                 lock (objetoLock)
                 {
