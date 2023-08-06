@@ -37,9 +37,9 @@ public class CalculoDeExpressoesString
 
         List<(string expressao, string erro)> listaDeTestes = new()
         {
-            ("2 * + 4", "A express„o È inv·lida."),
-            ("* 0 + 2 * 3", "A express„o È inv·lida."),
-            ("2 * 3 abcd", "A express„o È inv·lida.")
+            ("2 * + 4", "A express√£o √© inv√°lida."),
+            ("* 0 + 2 * 3", "A express√£o √© inv√°lida."),
+            ("2 * 3 abcd", "A express√£o √© inv√°lida.")
         };
 
         ProcessadorMatematicoServico processadorMatematicoService = new(fakeLogger);
@@ -57,8 +57,8 @@ public class CalculoDeExpressoesString
 
         List<(string expressao, string erro)> listaDeTestes = new()
         {
-            ("1 / 0", "N„o È possÌvel realizar divis„o por zero."),
-            ("1 + 1 + 1 / 0", "N„o È possÌvel realizar divis„o por zero."),
+            ("1 / 0", "N√£o √© poss√≠vel realizar divis√£o por zero."),
+            ("1 + 1 + 1 / 0", "N√£o √© poss√≠vel realizar divis√£o por zero."),
         };
 
         IProcessadorMatematicoServico processadorMatematicoService = new ProcessadorMatematicoServico(fakeLogger);
