@@ -1,0 +1,28 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repositorio
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '6.0'
+
+    - name: Restaurar Dependencias
+      run: dotnet restore
+
+    - name: Build App
+      run: dotnet build --configuration Release
+
+    - name: Run Unit Tests
+      run: dotnet test --configuration Release --no-build
